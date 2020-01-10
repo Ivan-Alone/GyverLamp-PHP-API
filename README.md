@@ -2,9 +2,10 @@
 GyverLamp PHP Controller. Can be used in fully remote lamp control from Internet, or in other 
 
 ## Documentation
-All documentation written in PHPDoc in each class file. 
+All documentation written in PHPDoc in each class file.
 
-##Example
+
+## Example
 
 ```php
 <?php
