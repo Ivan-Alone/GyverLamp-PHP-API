@@ -6,20 +6,24 @@
 	// Connectiong to GyverLamp on 192.168.1.125:8888
 	$lamp = new GyverLamp('192.168.1.125', 8888);
 	
-	// Power off lamp
-	$lamp->setPower(false);
+	if ($lamp->isConnected()) {
+		// Power off lamp
+		$lamp->setPower(false);
 	
-	// Select Fire mode
-	$lamp->setMode(LampModes::byName('Fire'));
-	// Set full brightness
-	$lamp->setBrightness(255);
-	// Set 25/255 effect speed
-	$lamp->setSpeed(25);
-	// Set 0 effect scale
-	$lamp->setScale(0);
+		// Select Fire mode
+		$lamp->setMode(LampModes::byName('Fire'));
+		// Set full brightness
+		$lamp->setBrightness(255);
+		// Set 25/255 effect speed
+		$lamp->setSpeed(25);
+		// Set 0 effect scale
+		$lamp->setScale(0);
 	
-	// Toggle power, enabling lamp
-	$lamp->togglePower();
+		// Toggle power, enabling lamp
+		$lamp->togglePower();
 	
-	// Print current lamp info
-	print_r($lamp->getInfo());
+		// Print current lamp info
+		print_r($lamp->getInfo());
+	} else {
+		echo 'Error: can\'t connect to GyverLamp!'.PHP_EOL;
+	}
